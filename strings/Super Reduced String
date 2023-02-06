@@ -1,0 +1,10 @@
+def superReducedString(s):
+    # Write your code here
+    for i in range(len(s)):
+        if i+1 < len(s) and s[i] == s[i+1]:
+            s = s.replace(f'{s[i]}{s[i+1]}', '')
+            s = superReducedString(s)
+    if s:
+        return s
+    else:
+        return 'Empty String'

@@ -1,0 +1,18 @@
+def luckBalance(k, contests):
+    # Write your code here
+    contests.sort(reverse = True)
+    luck, count = 0, 0
+    
+    for i in range(len(contests)):
+        important, lucky = contests[i][1], contests[i][0]
+        
+        if important:
+            if count < k:
+                count += 1
+                luck += lucky
+            else:
+                luck -= lucky
+        else:
+            luck += lucky
+            
+    return luck

@@ -1,0 +1,34 @@
+def countLuck(matrix, k):
+    d = {}
+    
+    for i in range(len(matrix)):
+        for j in range(len(matrix[i])):
+            if matrix[i][j] in ('.', '*', 'M'):
+                d[(i, j)] = matrix[i][j]
+                
+            if matrix[i][j] == 'M':
+                q = [(i, j, [0])]
+                v = [(i, j)]
+                
+    while q:
+        i, j, p = q.pop(0)
+        
+        if d[(i, j)] == '*':
+            if p[0] == k:
+                return 'Impressed'
+            else:
+                return 'Oops!'
+        
+        n = len(v)
+        p = list(p)
+        
+        for x, y in [(1, 0), (0, 1), (-1, 0), (0, -1)]:
+            x += i
+            y += j
+            
+            if (x, y) in d and (x, y) not in v:
+                v.append((x, y))
+                q.append((x, y, p))
+                
+        if (len(v) - n) > 1:
+            p[0] += 1

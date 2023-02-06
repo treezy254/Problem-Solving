@@ -1,0 +1,7 @@
+def missingNumbers(arr, brr):
+    # Write your code here
+    dope = []
+    for i in arr:
+        brr.remove(i)
+        
+    return sorted(set(brr))

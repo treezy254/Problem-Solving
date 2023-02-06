@@ -1,0 +1,10 @@
+import string
+
+def pangrams(s):
+    # Write your code here
+    alpha = set(string.ascii_lowercase)
+    
+    if set(s.lower()) >= alpha:
+        return 'pangram'
+    else:
+        return "not pangram"

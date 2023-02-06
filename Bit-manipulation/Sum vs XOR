@@ -1,0 +1,6 @@
+def sumXor(n):
+    # Write your code here
+    binary = bin(n)[2:]
+    chop = binary.count("0")
+    if n == 0:return 1
+    else:return 2**chop

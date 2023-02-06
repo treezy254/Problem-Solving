@@ -1,0 +1,13 @@
+def toys(w):
+    # Write your code here
+    w.sort()
+    count = 1
+    small = w[0]
+    for i in range(1, len(w)):
+        if w[i] - small <= 4:
+            continue
+        else:
+            small = w[i]
+            count += 1
+            
+    return count

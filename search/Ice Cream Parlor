@@ -1,0 +1,10 @@
+def icecreamParlor(m, arr):
+    # Write your code here
+    cost = []
+    
+    for i in range(len(arr)):
+        for j in range(i+1, len(arr)):
+            if arr[i] + arr[j] == m:
+                cost.append(i+1)
+                cost.append(j+1)
+    return cost

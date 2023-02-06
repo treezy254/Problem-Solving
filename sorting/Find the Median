@@ -1,0 +1,6 @@
+def findMedian(arr):
+    # Write your code here
+    quotient, remainder = divmod(len(arr), 2)
+    if remainder:
+        return sorted(arr)[quotient]
+    return sum(sorted(arr)[quotient -1:quotient + 1]) / 2

@@ -1,0 +1,7 @@
+def gemstones(arr):
+    # Write your code here
+    s = set(arr[0])
+    
+    for i in arr:
+        s = s&set(i)
+    return len(s)

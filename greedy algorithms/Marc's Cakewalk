@@ -1,0 +1,9 @@
+def marcsCakewalk(calorie):
+    # Write your code here
+    calorie.sort()
+    cal = calorie[::-1]
+    walk = 0
+    for i in range(len(cal)):
+        walk += 2**i * cal[i]
+        
+    return walk

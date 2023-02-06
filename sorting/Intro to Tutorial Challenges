@@ -1,0 +1,3 @@
+def introTutorial(V, arr):
+    # Write your code here
+    return arr.index(V)

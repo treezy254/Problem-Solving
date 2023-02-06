@@ -1,0 +1,14 @@
+def funnyString(s):
+    # Write your code here
+    sed = s[::-1]
+    
+    dope = [ord(c) for c in s]
+    drip = [ord(x) for x in sed]
+    
+    xdiff = [abs(dope[n]-dope[n-1]) for n in range(1, len(dope))]
+    ydiff = [abs(drip[m]-drip[m-1]) for m in range(1, len(drip))]
+    
+    if xdiff == ydiff:
+        return "Funny"
+    else:
+        return "Not Funny"

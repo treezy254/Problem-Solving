@@ -1,0 +1,8 @@
+def theLoveLetterMystery(s):
+    # Write your code here
+    r = s[::-1]
+    res = 0
+    
+    for i in range(len(s)//2):
+        res += abs(ord(s[i]) - ord(r[i]))
+    return res

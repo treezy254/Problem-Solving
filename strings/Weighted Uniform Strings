@@ -1,0 +1,20 @@
+def weightedUniformStrings(s, queries):
+    # Write your code here
+    alphabets = string.ascii_lowercase
+    sub = set()
+    last = ''
+    value = 0
+    
+    for idx in s:
+        weight = alphabets.index(idx) + 1
+        if idx == last:
+            value += weight
+            sub.add(value)
+        else:
+            sub.add(weight)
+            last = idx
+            value = weight
+    
+    output = ['Yes' if x in sub else 'No' for x in queries]
+    return output
+    
